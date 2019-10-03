@@ -35,7 +35,6 @@ import com.cloudant.client.api.CloudantClient;
 import com.cloudant.client.api.Database;
 import com.cloudant.client.api.model.Response;
 import com.cloudant.client.org.lightcouch.NoDocumentException;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import customer.config.CloudantPropertiesBean;
 import customer.model.Customer;
@@ -320,16 +319,5 @@ public class CustomerController {
         // Simply return an empty array
         final List<Customer> inventoryList = new ArrayList<Customer>();
         return ResponseEntity.ok(inventoryList);
-    }
-
-    /**
-     * @return Circuit breaker tripped
-     */
-    @HystrixCommand(fallbackMethod="failGood")
-    @RequestMapping("/circuitbreaker")
-    @ResponseBody
-    public String tripCircuitBreaker() {
-        System.out.println("Circuitbreaker Service invoked");
-        return "";
     }
 }

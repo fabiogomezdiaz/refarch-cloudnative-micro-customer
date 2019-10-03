@@ -3,7 +3,7 @@
 ## Introduction
 This chart will deploy a Spring Boot Application with a CouchDB database onto a Kubernetes Cluster.
 
-![Application Architecture](https://raw.githubusercontent.com/ibm-cloud-architecture/refarch-cloudnative-micro-customer/spring/static/customer.png?raw=true)
+![Application Architecture](https://raw.githubusercontent.com/fabiogomezdiaz/refarch-cloudnative-micro-customer/master/static/customer.png?raw=true)
 
 Here is an overview of the chart's features:
 - Leverage [`Spring Boot`](https://projects.spring.io/spring-boot/) framework to build a Microservices application.
@@ -14,7 +14,7 @@ Here is an overview of the chart's features:
 
 ## Chart Source
 The source for the `Customer` chart can be found at:
-* https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-customer/tree/spring/chart/customer
+* https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer/tree/master/chart/customer
 
 The source for the `CouchDB` chart can be found at:
 * https://github.com/helm/charts/tree/master/incubator/couchdb
@@ -46,7 +46,7 @@ The Customer Microservice REST API is OAuth protected.
   - Return customer by ID.  The caller of this API must pass a valid OAuth token with the scope `blue`.  The OAuth token is a JWT signed and is verified using a HS256 shared key.  If the `id` matches the customer ID passed in the `user_name` claim in the JWT, it is returned as a JSON object in the response; otherwise `HTTP 401` is returned.
 
 - `GET /micro/customer/search`
-  - Return customer by username.  The caller of this API must pass a valid OAuth token with the scope `admin`.  This API is called by the [Auth Microservice](https://github.com/ibm-cloud-architecture/refarch-cloudnative-auth) when authenticating a user.  A JSON object array is returned consisting of only users that match the customer username (either length 0 or 1).
+  - Return customer by username.  The caller of this API must pass a valid OAuth token with the scope `admin`.  This API is called by the [Auth Microservice](https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-auth) when authenticating a user.  A JSON object array is returned consisting of only users that match the customer username (either length 0 or 1).
 
 - `DELETE /micro/customer/{id}`
   - Delete a customer record.  The caller of this API must pass a valid OAuth token with the scope `blue`.  If the `id` matches the customer ID passed in the `user_name` claim in the JWT, the customer object is deleted; otherwise `HTTP 401` is returned.  This API is currently not called as it is not a function of the BlueCompute application.
@@ -70,7 +70,7 @@ helm upgrade --install couchdb \
   incubator/couchdb
 
 # Clone customer repository:
-git clone -b spring --single-branch https://github.com/ibm-cloud-architecture/refarch-cloudnative-micro-customer.git
+git clone -b spring --single-branch https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer.git
 
 # Go to Chart Directory
 cd refarch-cloudnative-micro-customer/chart/customer

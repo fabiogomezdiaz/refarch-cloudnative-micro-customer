@@ -92,7 +92,7 @@ jobs:
         - true
       before_script:
       # Install minikube and helm
-      - wget https://raw.githubusercontent.com/ibm-cloud-architecture/refarch-cloudnative-kubernetes/spring/scripts/install_minikube_and_helm.sh && chmod +x install_minikube_and_helm.sh && bash install_minikube_and_helm.sh && rm install_minikube_and_helm.sh
+      - wget https://raw.githubusercontent.com/fabiogomezdiaz/refarch-cloudnative-kubernetes/master/scripts/install_minikube_and_helm.sh && chmod +x install_minikube_and_helm.sh && bash install_minikube_and_helm.sh && rm install_minikube_and_helm.sh
       # Install CouchDB
       - helm upgrade --install couchdb --version 0.2.2 --set service.externalPort=5985,fullnameOverride=${RELEASE_NAME}-couchdb,createAdminSecret=true,adminUsername=${COUCHDB_USER},adminPassword=${COUCHDB_PASSWORD},clusterSize=1,persistentVolume.enabled=false incubator/couchdb
       script:

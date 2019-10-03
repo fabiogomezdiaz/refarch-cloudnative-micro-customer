@@ -1,7 +1,7 @@
 /*
     To learn how to use this sample pipeline, follow the guide below and enter the
     corresponding values for your environment and for this repository:
-    - https://github.com/ibm-cloud-architecture/refarch-cloudnative-devops-kubernetes
+    - https://github.com/fabiogomezdiaz/refarch-cloudnative-devops-kubernetes
 */
 
 // Environment
@@ -19,7 +19,7 @@ def tls = env.TLS ?: "" // Set to "--tls" for IBM Cloud Private
 // Pod Environment Variables
 def namespace = env.NAMESPACE ?: "default"
 def registry = env.REGISTRY ?: "docker.io"
-def imageName = env.IMAGE_NAME ?: "ibmcase/bluecompute-customer"
+def imageName = env.IMAGE_NAME ?: "fabiogomezdiaz/bluecompute-customer"
 def imageTag = env.IMAGE_TAG ?: "latest"
 def serviceLabels = env.SERVICE_LABELS ?: "app=customer,tier=backend" //,version=v1"
 def microServiceName = env.MICROSERVICE_NAME ?: "customer"
@@ -75,9 +75,9 @@ podTemplate(label: podLabel, cloud: cloud, serviceAccount: serviceAccount, envVa
         emptyDirVolume(mountPath: '/var/lib/docker', memory: false)
     ],
     containers: [
-        containerTemplate(name: 'jdk', image: 'ibmcase/openjdk-bash:alpine', ttyEnabled: true, command: 'cat'),
-        containerTemplate(name: 'docker', image: 'ibmcase/docker:18.09-dind', privileged: true),
-        containerTemplate(name: 'kubernetes', image: 'ibmcase/jenkins-slave-utils:3.1.2', ttyEnabled: true, command: 'cat')
+        containerTemplate(name: 'jdk', image: 'fabiogomezdiaz/openjdk-bash:alpine', ttyEnabled: true, command: 'cat'),
+        containerTemplate(name: 'docker', image: 'fabiogomezdiaz/docker:18.09-dind', privileged: true),
+        containerTemplate(name: 'kubernetes', image: 'fabiogomezdiaz/jenkins-slave-utils:3.1.2', ttyEnabled: true, command: 'cat')
   ]) {
 
     node(podLabel) {
