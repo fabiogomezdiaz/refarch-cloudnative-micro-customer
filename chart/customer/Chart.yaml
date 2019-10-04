@@ -1,4 +1,9 @@
-apiVersion: v1
-description: BlueCompute Customer Microservice
+apiVersion: v2
 name: customer
 version: 0.6.0
+description: BlueCompute Customer Microservice
+home: https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer
+maintainers:
+  - name: Fabio Gomez
+    email: fabio.gomez@ieee.org
+    url: https://github.com/fabiogomezdiaz
