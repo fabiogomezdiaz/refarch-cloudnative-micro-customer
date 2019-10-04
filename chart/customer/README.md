@@ -70,7 +70,7 @@ helm upgrade --install couchdb \
   incubator/couchdb
 
 # Clone customer repository:
-git clone -b spring --single-branch https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer.git
+git clone https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer.git
 
 # Go to Chart Directory
 cd refarch-cloudnative-micro-customer/chart/customer

@@ -82,7 +82,7 @@ The Customer Microservice REST API is OAuth protected.
     + [`helm`](https://docs.helm.sh/using_helm/#installing-helm)
 * Clone customer repository:
 ```bash
-git clone -b spring --single-branch https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer.git
+git clone https://github.com/fabiogomezdiaz/refarch-cloudnative-micro-customer.git
 cd refarch-cloudnative-micro-customer
 ```
 
