@@ -1,7 +1,5 @@
 package customer;
 
-import java.util.Random;
-
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -93,7 +91,5 @@ public class CustomerControllerTest {
 		assert(inv.getUsername().equals("user1"));
 		assert(inv.getPassword().equals("asdf"));
 		assert(inv.getEmail().equals("my@email.com"));
-		
-		
 	}
 }
